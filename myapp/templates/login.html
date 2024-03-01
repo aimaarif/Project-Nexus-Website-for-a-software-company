@@ -1,0 +1,29 @@
+{%load static%}
+<!-- restaurant_app/templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>Welcome to Our Restaurant</h1>
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="form-container" id="signup-form">
+            <h2>Signup</h2>
+            <a href="{% url 'signup' %}">Signup</a>
+        </div>
+    </div>
+</body>
+</html>
