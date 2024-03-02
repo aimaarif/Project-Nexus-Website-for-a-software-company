@@ -1,16 +1,105 @@
-<!-- restaurant_app/templates/signup.html -->
 {%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Signup</title>
+    <style>
+      
+        h2 {
+           color: #000000;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #7c7c7c, #000000);
+            /*background-image: url('static/bg.png');*/
+            background-size: cover;/*Adjust the background size as needed */
+            background-repeat: no-repeat;
+        }
+        
+        .glass-container {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 500px;
+            max-width: 100%;
+            text-align: center;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background: none ;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .color {
+            background: #86426c;
+        }
+        
+        .color:hover {
+            background: #682f50;
+        }
+        
+        button:hover {
+           background: none;
+        }
+        
+        .error-message {
+            color: #970053;
+            margin-top: 10px;
+        }
+        
+        .switch-page {
+            /* color: #3498db; */
+            text-decoration: none;
+            margin-top: 10px;
+            display: block;
+            cursor: pointer;
+        }
+        
+        .switch-page:hover {
+            text-decoration: underline;
+        }
+        button{
+            background-color: #000000;
+            width: 75px;
+        }
+        button:hover{
+            background-color: #313131;
+            width: 75px;
+        }
+        #hello {
+            color: black;
+        }
+        #hello:hover {
+           color: rgb(44, 44, 44);
+        } 
+        
+            </style>
 </head>
 <body>
     <div class="background"></div>
-    <div class="container">
+    <div class="container glass-container">
         <h1>Welcome to Our Restaurant</h1>
         <div class="form-container" id="signup-form">
             <h2>Signup</h2>
@@ -20,10 +109,9 @@
                 <button type="submit">Signup</button>
             </form>
         </div>
-        <div class="form-container" id="login-form">
-            <h2>Login</h2>
-            <a href="{% url 'login' %}">Login</a>
-        </div>
+        <br>
+            <a id="hello" href="{% url 'login' %}">Already have a account, sign up here.</a>
+    
     </div>
 </body>
 </html>
