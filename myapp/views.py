@@ -7,9 +7,33 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
+from .forms import FeedbackForm
 
 def home_view(request):
     return render(request, 'home.html')
+
+# views.py
+def feedback_view(request):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your feedback is submitted.")
+            return redirect('home')  # Create a success_page URL in your urls.py
+    else:
+        form = FeedbackForm()
+
+    return render(request, 'feedback.html', {'form': form})
+
+
+def products_view(request):
+    return render(request, 'products.html')
+
+def contact_view(request):
+    return render(request, 'contact.html')
+
+def about_view(request):
+	return render(request, 'about.html', {})	
 
 def login_view(request):
     if request.method == 'POST':

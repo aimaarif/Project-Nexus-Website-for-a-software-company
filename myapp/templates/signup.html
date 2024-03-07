@@ -1,3 +1,4 @@
+{%include 'navbar.html'%}
 {%load static%}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,28 +6,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Signup</title>
     <style>
-      
+      h1{
+        color: white;
+      }
         h2 {
-           color: #000000;
+           color: #ffffff;
         }
         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to right, #7c7c7c, #000000);
             /*background-image: url('static/bg.png');*/
             background-size: cover;/*Adjust the background size as needed */
             background-repeat: no-repeat;
         }
         
         .glass-container {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.815);
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.664);
             overflow: hidden;
             width: 500px;
             max-width: 100%;
@@ -92,15 +93,16 @@
             color: black;
         }
         #hello:hover {
-           color: rgb(44, 44, 44);
+           color: rgb(255, 255, 255);
         } 
         
             </style>
 </head>
 <body>
+    <br>
     <div class="background"></div>
     <div class="container glass-container">
-        <h1>Welcome to Our Restaurant</h1>
+        <h1>TECHY Software</h1>
         <div class="form-container" id="signup-form">
             <h2>Signup</h2>
             <form method="post" action="{% url 'signup' %}">
@@ -109,8 +111,8 @@
                 <button type="submit">Signup</button>
             </form>
         </div>
-        <br>
-            <a id="hello" href="{% url 'login' %}">Already have a account, sign up here.</a>
+        
+            <a id="hello" href="{% url 'login' %}">Already have a account, login here.</a>
     
     </div>
 </body>
